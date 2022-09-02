@@ -7,14 +7,15 @@
   <body>
 	<div id="app">
     <div>
-      <a href="https://www.linkedin.com/in/joel-montavon-704808a/" target="_blank"><img class="icon" width="60" height="60" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" style="position: absolute; right: 80px; top: 10px;"></img></a>
-      <a href="https://github.com/joelmontavon/flu-vax-cql" target="_blank"><img class="icon" width="80" height="80" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="position: absolute; right: 0px; top: 0px;"></img></a>
+      <el-link href="https://www.linkedin.com/in/joel-montavon-704808a/" target="_blank"><img class="icon" width="60" height="60" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" style="position: absolute; right: 80px; top: 10px;"></img></el-link>
+      <el-link href="https://github.com/joelmontavon/flu-vax-cql" target="_blank"><img class="icon" width="80" height="80" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="position: absolute; right: 0px; top: 0px;"></img></el-link>
     </div>
 
     <h1 class="header reveal center">The Fundamentals of Healthcare Interoperability</br>for Measure Developers</h1>
 
 
-
+<el-row>
+  <el-col :span="4" :offset="20">
 	<el-affix>
 	  <el-tabs v-model="activeSection" @tab-click="handleClick" :tab-position="'right'" class="demo-tabs">
 		<el-tab-pane name="standards">      
@@ -75,7 +76,8 @@
 		</el-tab-pane>
 	  </el-tabs>
 	</el-affix>
-
+  </el-col>
+</el-row>
 
   <div class="row spacer">
     <div class="main">
@@ -86,7 +88,7 @@
     			</div>
 		    </div>
 	  </div>
-       <div id="hl7" class="side image reveal reveal_right">
+       <div class="side image reveal reveal_right">
          <div class="item-wrapper">
 		       <div class="item">
 			       <img width="500" src="img/interop.jpg" alt="">
@@ -117,7 +119,7 @@
     <div class="main">
 		    <div class="item-wrapper">
     			<div class="item">
-    				<h2 class="large reveal"><a href="https://www.hl7.org/">Health Level Seven International (HL7)</a></h2>
+    				<h2 class="large reveal"><el-link href="https://www.hl7.org/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Health Level Seven International (HL7)</el-link></h2>
     				<p class="reveal">HL7 is a non-profit organization dedicated to developing standards for the exchange of electronic healthcare data. The organization is supported by more than 1,600 members from over 50 countries, including 500+ corporate members representing healthcare providers, government stakeholders, payers, pharmaceutical companies, vendors/suppliers, and consulting firms.</p>
 					<p class="reveal">Over the years, HL7 has produced several standards to facilitate the exchange of healthcare information, including Clinical Document Architecture (CDA), and the Fast Healthcare Interoperability Resources (FHIR) standard.</p>
     			</div>
@@ -143,7 +145,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal"><a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">Clinical Document Architecture (CDA)</a></h2>
+				<h2 class="large reveal"><el-link href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Clinical Document Architecture (CDA)</el-link></h2>
   				<p class="reveal">CDA is an interoperability standard that was released as part of HL7 V3 but had some challenges that limited implementation:</p>
   				<ul class="reveal">
 					<li class="reveal">Steep learning curve</li>
@@ -157,7 +159,7 @@
 	</div>
 
 
-	<h1 class="header reveal center"><a href="https://hl7.org/FHIR/">Fast Healthcare Interoperability Resources (FHIR)</a></h2>
+	<h1 class="header reveal center"><el-link href="https://hl7.org/FHIR/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Fast Healthcare Interoperability Resources (FHIR)</el-link></h2>
     <div class="row spacer">
 	     <div class="item-wrapper" style="width: 500px; align-content: center;">
 		       <div class="item reveal">
@@ -229,7 +231,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<p class="reveal">FHIR includes a data model in the form of <a href="https://www.hl7.org/fhir/resourcelist.html">resources</a> and a specification for the exchange of these resources via a RESTful API as well as messaging and documents.</p>
+				<p class="reveal">FHIR includes a data model in the form of <el-link href="https://www.hl7.org/fhir/resourcelist.html" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">resources</el-link> and a specification for the exchange of these resources via a RESTful API as well as messaging and documents.</p>
 				<ul class="reveal">
 					<li class="reveal">Resources span many concepts including the individual (e.g., Patient), workflow (e.g., Appointment), patient management (e.g., Encounter), clinical treatment (e.g., Condition, Observation, MediationRequest, CarePlan, Communication), and financial transactions (e.g., Coverage, Claim).</li>
 					<li class="reveal">Messages are used to communicate multiple resources in a single exchange.</li>
@@ -251,11 +253,11 @@
 					<li class="reveal">Providers must have FHIR-based APIs to share data with payers and the patient's other providers. </li>
 					<li class="reveal">Payers must have FHIR-based APIs that serve as a provider directory as well as payer-to-payer exchange.</li>
 				</ul>
-				<p class="reveal">There are some exceptions to these rules. For further information, see the <a href="https://www.cms.gov/Regulations-and-Guidance/Guidance/Interoperability/index">CMS Interoperability and Patient Access final rule</a> and the <a href="https://www.healthit.gov/curesrule/">Office of the National Coordinator [ONC] Cures Act Final Rule</a>.</p>
+				<p class="reveal">There are some exceptions to these rules. For further information, see the <el-link href="https://www.cms.gov/Regulations-and-Guidance/Guidance/Interoperability/index" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">CMS Interoperability and Patient Access final rule</el-link> and the <el-link href="https://www.healthit.gov/curesrule/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Office of the National Coordinator [ONC] Cures Act Final Rule</el-link>.</p>
   			</div>
   		</div>
 	  </div>
-	  <div id="govt-mandates" class="side image reveal reveal_right">
+	  <div class="side image reveal reveal_right">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/cures-act.png">
@@ -275,14 +277,14 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal"><a href="https://ecqi.healthit.gov/qdm">Quality Data Model (QDM)</a></h2>
+				<h2 class="large reveal"><el-link href="https://ecqi.healthit.gov/qdm" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Quality Data Model (QDM)</el-link></h2>
   				<p class="reveal">QDM is an information model that defines relationships between patients and clinical concepts in a standardized format to enable electronic clinical quality performance measurement. The model is limited to representing quality measure concepts for stakeholders involved in electronic clinical quality measure (eCQM) development and reporting.</p>
   			</div>
   		</div>
 	  </div>
 	</div>
 
-  <h1 class="header reveal center"><a href="https://cql.hl7.org/">Clinical Quality Language (CQL)</a></h2>	
+  <h1 class="header reveal center"><el-link href="https://cql.hl7.org/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Clinical Quality Language (CQL)</el-link></h2>	
   <div class="row spacer">	
       <div class="main">
   		<div class="item-wrapper">
@@ -303,7 +305,7 @@
 	</div>	
 
   <div class="row spacer">
-  	<div id="qdm" class="side image reveal reveal_left">
+  	<div class="side image reveal reveal_left">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/lab-workspace.gif">
@@ -314,7 +316,7 @@
   		<div class="item-wrapper">
   			<div class="item">
 				<p class="reveal">Open-source tooling for the language is under development and being built in parallel with the specification. The Measure Authoring Tool (MAT), which can be used to author measures using CQL, and Bonnie, which can be used to test those measures, are open-source projects built on top of the core tooling.</p>
-				<p class="reveal"><a href="https://cqlab.io/">CQLab</a> is another project built from the core tooling. It is a modern, single platform for measure developers to author digital quality measures using industry standards such FHIR and CQL, build value sets using medical coding terminologies (e.g., SNOMED, ICD-1O, and RxNorm), and test those measures.</p>
+				<p class="reveal"><el-link href="https://cqlab.io/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">CQLab</el-link> is another project built from the core tooling. It is a modern, single platform for measure developers to author digital quality measures using industry standards such FHIR and CQL, build value sets using medical coding terminologies (e.g., SNOMED, ICD-1O, and RxNorm), and test those measures.</p>
   			</div>
   		</div>
 	  </div>
@@ -324,7 +326,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal"><a href="https://vsac.nlm.nih.gov/">Value Set Authoring Center (VSAC)</a></h2>
+				<h2 class="large reveal"><el-link href="https://vsac.nlm.nih.gov/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Value Set Authoring Center (VSAC)</el-link></h2>
   				<p class="reveal">The VSAC is a repository and authoring tool for public value sets. Value sets are lists of codes and corresponding terms, from standard clinical vocabularies (such as SNOMED-CT, RxNorm, LOINC and others), that define clinical concepts to support effective and interoperable health information exchange including quality measurement.</p>
   			</div>
   		</div>
@@ -339,7 +341,7 @@
 	</div>
 
   <div class="row spacer">
-  	<div id="qdm" class="side image reveal reveal_left">
+  	<div class="side image reveal reveal_left">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/components.png">
@@ -349,7 +351,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<p class="reveal">Bringing this all together, the data model (e.g., CDA, FHIR), the logic (e.g., CDM, CQL), and vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability and quality measurement. The adoption of these standards are critical to reducing cost and improving clinical outcomes.</p>
+				<p class="reveal">Bringing this all together, the data model (e.g., CDA, FHIR), the logic (e.g., CDM, CQL), and vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability and quality measurement. The adoption of these standards are critical to reducing healthcare costs and improving clinical outcomes.</p>
   			</div>
   		</div>
 	  </div>
@@ -361,14 +363,14 @@
 				<div class="item">
 				<p class="reveal">Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources:</p>
 				<ul class="reveal" style="text-align: left;">
-					<li><a href="https://hl7.org/FHIR/">FHIR Specification</a></li>
-					<li><a href="https://cql.hl7.org/">CQL Specification</a></li>
-					<li><a href="https://cql.hl7.org/10-c-referenceimplementations.html">CQL Reference Implementations (Tooling and Resources)</a></li>
-					<li><a href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples">Cooking with CQL Q&A</a></li>
-					<li><a href="https://github.com/cqframework/cqf-exercises">CQL Exercises</a></li>
-					<li><a href="https://build.fhir.org/index.html">FHIR Specification</a></li>
-					<li><a href="https://chat.fhir.org/login/">FHIR Community</a></li>
-					<li><a href="https://cqlab.io/">CQLab</a></li>
+					<li><el-link href="https://hl7.org/FHIR/" style="font-size: 1em; color: black;" :underline="false">FHIR Specification</el-link></li>
+					<li><el-link href="https://cql.hl7.org/" style="font-size: 1em; color: black;" :underline="false">CQL Specification</el-link></li>
+					<li><el-link href="https://cql.hl7.org/10-c-referenceimplementations.html" style="font-size: 1em; color: black;" :underline="false">CQL Reference Implementations (Tooling and Resources)</el-link></li>
+					<li><el-link href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples" style="font-size: 1em; color: black;" :underline="false">Cooking with CQL Q&A</el-link></li>
+					<li><el-link href="https://github.com/cqframework/cqf-exercises" style="font-size: 1em; color: black;" :underline="false">CQL Exercises</el-link></li>
+					<li><el-link href="https://build.fhir.org/index.html" style="font-size: 1em; color: black;" :underline="false">FHIR Specification</el-link></li>
+					<li><el-link href="https://chat.fhir.org/login/" style="font-size: 1em; color: black;" :underline="false">FHIR Community</el-link></li>
+					<li><el-link href="https://cqlab.io/" style="font-size: 1em; color: black;" :underline="false">CQLab</el-link></li>
 				</ul>
 				<!--<img src="http://hl7.org/fhir/2016may/assets/images/fhir-logo-www.png"></img>-->
 				</div>

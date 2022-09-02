@@ -1,0 +1,124 @@
+body {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.header {
+  margin: 200px auto;
+}
+
+h2.large {
+  font-size: 1.8em;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 30px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 1px 1px 5px 1px #CCCCCC;
+}
+
+.image .card {
+  padding: 10px;
+  /*height: 0;
+  padding-bottom: calc(100% - 10px);*/
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.side {
+  max-width: 55%;
+}
+
+.main {
+  max-width: 40%;
+}
+
+.item-wrapper  {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.item {
+  min-width: 150px;
+  /*margin: 15px;
+  padding: 30px;
+  background: red;
+  text-align: center;*/
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.spacer {
+  margin-bottom: 150px;
+  padding-right: 100px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.mat-section {
+	font-weight: bold;
+	font-style: italic;
+}
+
+pre {
+	padding: 10px;
+    background: rgb(235, 235, 235);
+}
+
+code {
+	color: black;
+	font-family:Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+}
+
+code > .keyword {
+	color: firebrick;
+}
+
+code > .quote {
+	color: blue;
+}
+
+code > .comment {
+	color: darkgreen;
+}
+
+code > .madlib {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}

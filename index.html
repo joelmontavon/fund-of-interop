@@ -1,0 +1,299 @@
+<html>
+  <head>
+	<link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/theme-chalk/index.css" />
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+	<div id="app">
+    <div>
+      <a href="https://www.linkedin.com/in/joel-montavon-704808a/" target="_blank"><img class="icon" width="60" height="60" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" style="position: absolute; right: 80px; top: 10px;"></img></a>
+      <a href="https://github.com/joelmontavon/flu-vax-cql" target="_blank"><img class="icon" width="80" height="80" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="position: absolute; right: 0px; top: 0px;"></img></a>
+    </div>
+
+    <h1 class="header reveal center">The Fundamentals of Healthcare Interoperability</br>for Measure Developers</h1>
+
+
+
+	<el-affix>
+	  <el-tabs v-model="activeSection" @tab-click="handleClick" :tab-position="'right'" class="demo-tabs">
+		<el-tab-pane name="standards">      
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#standards" :underline="false">Standards</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="hl7">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#hl7" :underline="false">HL7</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="cda">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#cda" :underline="false">CDA</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="fhir">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#fhir" :underline="false">FHIR</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<!--<el-tab-pane name="govt-mandates">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#govt-mandates" :underline="false">Government Mandates</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>-->
+		<el-tab-pane name="cql">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#cql" :underline="false">CQL</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+	  </el-tabs>
+	</el-affix>
+
+
+  <div class="row spacer">
+    <div class="main">
+		    <div class="item-wrapper">
+    			<div class="item">
+    				<p class="reveal">In the US, most healthcare providers have adopted an electronic healthcare record (EHR) or other software for capturing clinical information. This isn't a silver bullet though. Healthcare data can remain trapped within these systems. Even today, clinicians still fall back on old and inefficient ways of sharing clinical information from faxing chart notes to manually sharing paper-based documents. Without the seamless exchange of healthcare data, it can be difficult for clinicians caring for a patient to get the complete picture of the person’s current health. This lack of coordination in the care of patients impacts the ability of clinicians to make appropriate clinical decisions and negatively impacts patient care. There are numerous examples where this lack of access to data has led to actual patient harm including death.</p>
+    				<p class="reveal">On this page, we will try to demystify some of the terms and acronyms that measure developers may come across in this world.</p>
+    			</div>
+		    </div>
+	  </div>
+       <div id="hl7" class="side image reveal reveal_right">
+         <div class="item-wrapper">
+		       <div class="item">
+			       <img width="500" src="img/interop.jpg" alt="">
+		       </div>
+	       </div>
+	     </div>
+    </div>
+	
+  <div class="row spacer">
+    <div id="standards" class="side image reveal reveal_left">
+      <div class="item-wrapper">
+        <div class="item card">
+			<img src="img/standards.jpg"></img>
+        </div>
+      </div>
+  	</div>
+  	<div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+  				<h2 class="large reveal">Standards</h2>
+				<p class="reveal">A standard is simply a commonly agreed way of doing something. And, a data standard is an agreement related to the representation, format, definition, structuring, tagging, transmission, manipulation, use, and management of data. In our modern world, the adoption of data standards has allowed for surfing the world-wide web, making purchases online, and even reserving a flight using a third-party website. While these activities are still possible without standards, it is considerably more difficult for a vendor to deal with numerous different interfaces rather than just one.</p>
+  		  </div>
+  	  </div>
+    </div>
+  </div>
+
+  <div class="row spacer">
+    <div class="main">
+		    <div class="item-wrapper">
+    			<div class="item">
+    				<h2 class="large reveal">Health Level Seven International (HL7) </h2>
+    				<p class="reveal">HL7 is a non-profit organization dedicated to developing standards for the exchange of electronic healthcare data. The organization is supported by more than 1,600 members from over 50 countries, including 500+ corporate members representing healthcare providers, government stakeholders, payers, pharmaceutical companies, vendors/suppliers, and consulting firms.</p>
+					<p class="reveal">Over the years, HL7 has produced several standards to facilitate the exchange of healthcare information, including Clinical Document Architecture (CDA), and the Fast Healthcare Interoperability Resources (FHIR) standard.</p>
+    			</div>
+		    </div>
+	  </div>
+       <div id="hl7" class="side image reveal reveal_right">
+         <div class="item-wrapper">
+		       <div class="item">
+			       <img width="500" src="img/hl7.png" alt="">
+		       </div>
+	       </div>
+	     </div>
+    </div>
+
+  <div class="row spacer">
+  	<div id="cda" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/HL7-V2-V3-FHIR.png">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Clinical Document Architecture (CDA)</h2>
+  				<p class="reveal">CDA is an interoperability standard that was released as part of HL7 V3 but had some challenges that limited implementation:</p>
+  				<ul class="reveal">
+					<li class="reveal">Steep learning curve</li>
+					<li class="reveal">Complexity limited true interoperability</li>
+					<li class="reveal">CDA documents do not fit well in many workflows</li>
+					<li class="reveal">Extensibility is difficult</li>
+				</ul>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+
+	<h1 class="header reveal center">Fast Healthcare Interoperability Resources (FHIR)</h2>
+    <div class="row spacer">
+	     <div class="item-wrapper" style="width: 500px; align-content: center;">
+		       <div class="item reveal">
+			          <img src="img/fhir.png" alt="">
+		       </div>
+	     </div>
+    </div>
+	  
+  <div class="row spacer">
+
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+  				<p class="reveal">FHIR (pronounced "fire") is an interoperability standard intended to facilitate the exchange of healthcare information between healthcare providers, patients, caregivers, payers, researchers, and anyone else involved in the healthcare ecosystem.</p>
+  				<p class="reveal">The standard focuses on speed to learn and implement, lowering costs, scaling well from simple to complex, flexibility, and keeping the standard free to use. And, it leverages existing web technologies such as HTTP, REST, JSON, XML, and OAuth. These technologies should be familiar to most developers, reducing the learning curve compared with other standards.</p>
+  			</div>
+  		</div>
+	  </div>
+	  <div id="fhir" class="side image reveal reveal_right">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  				<table>
+					<tr>
+						<th>Technology</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>Hyper Text Transfer Protocol (HTTP)</td>
+						<td>The protocol allows for communication between clients (e.g., browser) and servers on the World Wide Web. The primary or most commonly-used HTTP methods are POST, GET, PUT, PATCH, and DELETE. These methods correspond to create, read, update, and delete (or CRUD) operations, respectively.</td>					
+					</tr>
+					<tr>
+						<td>REpresentational State Transfer (REST)</td>
+						<td>
+							<p>The RESTful API architecture is built on the following guiding principles:</p>
+							<ul>
+								<li>Uniform interface for identifying and manipulating resources</li>
+								<li>Separation of concerns between the client and server so each can evolve independently</li>
+								<li>Stateless in that it requires that requests from the client to the server contain all information necessary to complete the request</li>
+							</ul>
+							<p>Note: An application user programming interface (API) defines how two software applications communicate with each other using requests and responses</p>
+						</td>					
+					</tr>
+					<tr>
+						<td>Javascript Object Notation (JSON)</td>
+						<td>JSON is a lightweight format for storing and transporting data. It is used for sending data from a server to a client in most modern web applications.</td>					
+					</tr>
+					<tr>
+						<td>eXtensible Markup Language (XML)</td>
+						<td>XML is a markup language much, like HTML which is used web pages. Like JSON, it was designed to store and transport data.</td>					
+					</tr>
+					<tr>
+						<td>Open Authorization (OAuth)</td>
+						<td>OAuth is a standard for access delegation, commonly used as a way for internet users to grant websites or applications access to their information on other websites but without giving them the passwords. This mechanism is used by companies such as Google, Facebook, Microsoft, and Twitter to permit the users to share information about their accounts with third-party applications or websites.</td>					
+					</tr>
+				</table>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <div class="row spacer">
+  	<div class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+				<img src="img/resources.png" alt="">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<p class="reveal">FHIR includes a data model in the form of resources and a specification for the exchange of these resources via a RESTful API as well as messaging and documents.</p>
+				<ul class="reveal">
+					<li class="reveal">Resources span many concepts including the individual (e.g., Patient), workflow (e.g., Appointment), patient management (e.g., Encounter), clinical treatment (e.g., Condition, Observation, MediationRequest, CarePlan, Communication), and financial transactions (e.g., Coverage, Claim).</li>
+					<li class="reveal">Messages are used to communicate multiple resources in a single exchange.</li>
+					<li class="reveal">Documents focus on persistence when data touches multiple resources.</li>
+				</ul>
+				<p class="reveal">It is also notable that the content in the core specification is meant to cover the top 80% of use cases. Unlike older standards (i.e., HL7 V2), the extensions are cleaner and easier. The idea is to focus on the real needs of the industry but allow for all the special use cases as well. More recent standards (i.e., HL7 V3) were commonly criticized for trying to account for too many use cases in the core standard, thus leading to an overly complex standard that was difficult to achieve.</p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+	
+  <div class="row spacer">	
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Government Mandates</h2>
+  				<p class="reveal">In 2020, the U.S. Centers for Medicare & Medicaid Services (CMS) finalized a mandate for the use of FHIR by a variety of CMS-regulated payers and providers beginning in mid-2021. These rules have far reaching implications for healthcare providers, payers, and health IT vendors.</p>
+				<ul class="reveal">
+					<li class="reveal">Health IT Vendors must have a FHIR API that allows patients access to their data. </li>
+					<li class="reveal">Providers must have FHIR-based APIs to share data with payers and the patient's other providers. </li>
+					<li class="reveal">Payers must have FHIR-based APIs that serve as a provider directory as well as payer-to-payer exchange.</li>
+				</ul>
+				<p class="reveal">There are some exceptions to these rules. For further information, see the <a href="https://www.cms.gov/Regulations-and-Guidance/Guidance/Interoperability/index">CMS Interoperability and Patient Access final rule</a> and the <a href="https://www.healthit.gov/curesrule/">Office of the National Coordinator [ONC] Cures Act Final Rule</a>.</p>
+  			</div>
+  		</div>
+	  </div>
+	  <div id="govt-mandates" class="side image reveal reveal_right">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/cures-act.png">
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <div class="row spacer">
+  	<div id="cql" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/lab-workspace.gif">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal">Clinical Quality Language (CQL)</h2>
+  				<p class="reveal">Clinical Quality Language (CQL) is a language for representing clinically-focused logic. It is currently being used in a broad variety of applications from quality measurement, to clinical decision support, and public health reporting.</p>
+				<p class="reveal">The specification includes a machine-readable representation called Expression Logical Model (ELM) which should enable sharing between heallthcare organizations.</p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+	
+  	<div class="row spacer">
+		<div class="main">
+			<div class="item-wrapper">
+				<div class="item">
+				<p class="reveal">We've done it! Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources:</p>
+				<ul class="reveal" style="text-align: left;">
+					<li><a href="https://cql.hl7.org/">CQL Specification</a></li>
+					<li><a href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples">Cooking with CQL Q&A</a></li>
+					<li><a href="https://github.com/cqframework/cqf-exercises">CQL Exercises</a></li>
+					<li><a href="https://build.fhir.org/index.html">FHIR Specification</a></li>
+					<li><a href="https://chat.fhir.org/login/">FHIR Community</a></li>
+				</ul>
+				<!--<img src="http://hl7.org/fhir/2016may/assets/images/fhir-logo-www.png"></img>-->
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/element-plus"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/AttrPlugin.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 var app = Vue.createApp({
 	data() {
 		return {
-			activeSection: 'about'
+			activeSection: 'standards'
 		}
 	},
 	mounted() {

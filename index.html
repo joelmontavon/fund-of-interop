@@ -52,10 +52,24 @@
 			</span>
 		  </template>
 		</el-tab-pane>-->
+		<el-tab-pane name="qdm">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#qdm" :underline="false">QDM</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
 		<el-tab-pane name="cql">
 		  <template #label>
 			<span class="custom-tabs-label">
 			  <el-link href="#cql" :underline="false">CQL</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="vsac">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#vsac" :underline="false">VSAC</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
@@ -67,8 +81,8 @@
     <div class="main">
 		    <div class="item-wrapper">
     			<div class="item">
-    				<p class="reveal">In the US, most healthcare providers have adopted an electronic healthcare record (EHR) or other software for capturing clinical information. This isn't a silver bullet though. Healthcare data can remain trapped within these systems. Even today, clinicians still fall back on old and inefficient ways of sharing clinical information from faxing chart notes to manually sharing paper-based documents. Without the seamless exchange of healthcare data, it can be difficult for clinicians caring for a patient to get the complete picture of the person’s current health. This lack of coordination in the care of patients impacts the ability of clinicians to make appropriate clinical decisions and negatively impacts patient care. There are numerous examples where this lack of access to data has led to actual patient harm including death.</p>
-    				<p class="reveal">On this page, we will try to demystify some of the terms and acronyms that measure developers may come across in this world.</p>
+    				<p class="reveal">In the US, most healthcare providers have adopted an electronic healthcare record (EHR) or other software for capturing clinical information. This technology isn't a silver bullet though. Healthcare data can remain trapped within these systems. Even today, clinicians still fall back on old and inefficient ways of sharing clinical information from faxing chart notes to manually sharing paper-based documents. Without the seamless exchange of healthcare data, it can be difficult for clinicians caring for a patient to get the complete picture of the person's current health. This lack of coordination in the care of patients impacts the ability of clinicians to make appropriate clinical decisions and negatively impacts patient care. There are numerous examples where this lack of access to data has led to actual patient harm including death.</p>
+    				<p class="reveal">On this page, we will try to demystify some of the terms and acronyms that measure developers may come across in this space.</p>
     			</div>
 		    </div>
 	  </div>
@@ -103,7 +117,7 @@
     <div class="main">
 		    <div class="item-wrapper">
     			<div class="item">
-    				<h2 class="large reveal">Health Level Seven International (HL7) </h2>
+    				<h2 class="large reveal"><a href="https://www.hl7.org/">Health Level Seven International (HL7)</a></h2>
     				<p class="reveal">HL7 is a non-profit organization dedicated to developing standards for the exchange of electronic healthcare data. The organization is supported by more than 1,600 members from over 50 countries, including 500+ corporate members representing healthcare providers, government stakeholders, payers, pharmaceutical companies, vendors/suppliers, and consulting firms.</p>
 					<p class="reveal">Over the years, HL7 has produced several standards to facilitate the exchange of healthcare information, including Clinical Document Architecture (CDA), and the Fast Healthcare Interoperability Resources (FHIR) standard.</p>
     			</div>
@@ -129,7 +143,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal">Clinical Document Architecture (CDA)</h2>
+				<h2 class="large reveal"><a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">Clinical Document Architecture (CDA)</a></h2>
   				<p class="reveal">CDA is an interoperability standard that was released as part of HL7 V3 but had some challenges that limited implementation:</p>
   				<ul class="reveal">
 					<li class="reveal">Steep learning curve</li>
@@ -143,7 +157,7 @@
 	</div>
 
 
-	<h1 class="header reveal center">Fast Healthcare Interoperability Resources (FHIR)</h2>
+	<h1 class="header reveal center"><a href="https://hl7.org/FHIR/">Fast Healthcare Interoperability Resources (FHIR)</a></h2>
     <div class="row spacer">
 	     <div class="item-wrapper" style="width: 500px; align-content: center;">
 		       <div class="item reveal">
@@ -165,18 +179,18 @@
 	  <div id="fhir" class="side image reveal reveal_right">
   		<div class="item-wrapper">
   			<div class="item card">
-  				<table>
-					<tr>
-						<th>Technology</th>
-						<th>Description</th>
+  				<table class="el-table">
+					<tr class="el-table__row">
+						<th class="el-table__cell">Technology</th>
+						<th class="el-table__cell">Description</th>
 					</tr>
-					<tr>
-						<td>Hyper Text Transfer Protocol (HTTP)</td>
-						<td>The protocol allows for communication between clients (e.g., browser) and servers on the World Wide Web. The primary or most commonly-used HTTP methods are POST, GET, PUT, PATCH, and DELETE. These methods correspond to create, read, update, and delete (or CRUD) operations, respectively.</td>					
+					<tr class="el-table__row">
+						<td class="el-table__cell">Hyper Text Transfer Protocol (HTTP)</td>
+						<td class="el-table__cell">The protocol allows for communication between clients (e.g., browser) and servers on the World Wide Web. The primary or most commonly-used HTTP methods are POST, GET, PUT, PATCH, and DELETE. These methods correspond to create, read, update, and delete (or CRUD) operations, respectively.</td>					
 					</tr>
-					<tr>
-						<td>REpresentational State Transfer (REST)</td>
-						<td>
+					<tr class="el-table__row el-table__row--striped">
+						<td class="el-table__cell">REpresentational State Transfer (REST)</td>
+						<td class="el-table__cell">
 							<p>The RESTful API architecture is built on the following guiding principles:</p>
 							<ul>
 								<li>Uniform interface for identifying and manipulating resources</li>
@@ -186,17 +200,17 @@
 							<p>Note: An application user programming interface (API) defines how two software applications communicate with each other using requests and responses</p>
 						</td>					
 					</tr>
-					<tr>
-						<td>Javascript Object Notation (JSON)</td>
-						<td>JSON is a lightweight format for storing and transporting data. It is used for sending data from a server to a client in most modern web applications.</td>					
+					<tr class="el-table__row">
+						<td class="el-table__cell">Javascript Object Notation (JSON)</td>
+						<td class="el-table__cell">JSON is a lightweight format for storing and transporting data. It is used for sending data from a server to a client in most modern web applications.</td>					
 					</tr>
-					<tr>
-						<td>eXtensible Markup Language (XML)</td>
-						<td>XML is a markup language much, like HTML which is used web pages. Like JSON, it was designed to store and transport data.</td>					
+					<tr class="el-table__row el-table__row--striped">
+						<td class="el-table__cell">eXtensible Markup Language (XML)</td>
+						<td class="el-table__cell">XML is a markup language much, like HTML which is used web pages. Like JSON, it was designed to store and transport data.</td>					
 					</tr>
-					<tr>
-						<td>Open Authorization (OAuth)</td>
-						<td>OAuth is a standard for access delegation, commonly used as a way for internet users to grant websites or applications access to their information on other websites but without giving them the passwords. This mechanism is used by companies such as Google, Facebook, Microsoft, and Twitter to permit the users to share information about their accounts with third-party applications or websites.</td>					
+					<tr class="el-table__row">
+						<td class="el-table__cell">Open Authorization (OAuth)</td>
+						<td class="el-table__cell">OAuth is a standard for access delegation, commonly used as a way for internet users to grant websites or applications access to their information on other websites but without giving them the passwords. This mechanism is used by companies such as Google, Facebook, Microsoft, and Twitter to permit the users to share information about their accounts with third-party applications or websites.</td>					
 					</tr>
 				</table>
   			</div>
@@ -215,7 +229,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<p class="reveal">FHIR includes a data model in the form of resources and a specification for the exchange of these resources via a RESTful API as well as messaging and documents.</p>
+				<p class="reveal">FHIR includes a data model in the form of <a href="https://www.hl7.org/fhir/resourcelist.html">resources</a> and a specification for the exchange of these resources via a RESTful API as well as messaging and documents.</p>
 				<ul class="reveal">
 					<li class="reveal">Resources span many concepts including the individual (e.g., Patient), workflow (e.g., Appointment), patient management (e.g., Encounter), clinical treatment (e.g., Condition, Observation, MediationRequest, CarePlan, Communication), and financial transactions (e.g., Coverage, Claim).</li>
 					<li class="reveal">Messages are used to communicate multiple resources in a single exchange.</li>
@@ -231,7 +245,6 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal">Government Mandates</h2>
   				<p class="reveal">In 2020, the U.S. Centers for Medicare & Medicaid Services (CMS) finalized a mandate for the use of FHIR by a variety of CMS-regulated payers and providers beginning in mid-2021. These rules have far reaching implications for healthcare providers, payers, and health IT vendors.</p>
 				<ul class="reveal">
 					<li class="reveal">Health IT Vendors must have a FHIR API that allows patients access to their data. </li>
@@ -252,7 +265,45 @@
 	</div>
 
   <div class="row spacer">
-  	<div id="cql" class="side image reveal reveal_left">
+  	<div id="qdm" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/qdm.png">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal"><a href="https://ecqi.healthit.gov/qdm">Quality Data Model (QDM)</a></h2>
+  				<p class="reveal">QDM is an information model that defines relationships between patients and clinical concepts in a standardized format to enable electronic clinical quality performance measurement. The model is limited to representing quality measure concepts for stakeholders involved in electronic clinical quality measure (eCQM) development and reporting.</p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <h1 class="header reveal center"><a href="https://cql.hl7.org/">Clinical Quality Language (CQL)</a></h2>	
+  <div class="row spacer">	
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+  				<p class="reveal">CQL is a language for representing clinically-focused logic and meant to replace the Quality Data Model (QDM). And, it is intended to be used for electronic clinical quality measures (eCQMs) and clinical decision support (CDS).</p>
+				<p class="reveal">The language is intended to be human readable but the specification also includes a machine-readable representation called Expression Logical Model (ELM) which should enable sharing between heallthcare organizations. In quality measurement, this creates efficiencies of scale by eliminating the need for each healthcare organizations to code quality measures for their system and ensures consistent implementation. However, there is a significant upfront costs to rebuild their systems or map their data to the FHIR (or CDA) standard.</p>
+
+  			</div>
+  		</div>
+	  </div>
+	  <div id="cql" class="side image reveal reveal_right">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/cql.png">
+  			</div>
+  		</div>
+	  </div>
+	</div>	
+
+  <div class="row spacer">
+  	<div id="qdm" class="side image reveal reveal_left">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/lab-workspace.gif">
@@ -262,9 +313,43 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal">Clinical Quality Language (CQL)</h2>
-  				<p class="reveal">Clinical Quality Language (CQL) is a language for representing clinically-focused logic. It is currently being used in a broad variety of applications from quality measurement, to clinical decision support, and public health reporting.</p>
-				<p class="reveal">The specification includes a machine-readable representation called Expression Logical Model (ELM) which should enable sharing between heallthcare organizations.</p>
+				<p class="reveal">Open-source tooling for the language is under development and being built in parallel with the specification. The Measure Authoring Tool (MAT), which can be used to author measures using CQL, and Bonnie, which can be used to test those measures, are open-source projects built on top of the core tooling.</p>
+				<p class="reveal"><a href="https://cqlab.io/">CQLab</a> is another project built from the core tooling. It is a modern, single platform for measure developers to author digital quality measures using industry standards such FHIR and CQL, build value sets using medical coding terminologies (e.g., SNOMED, ICD-1O, and RxNorm), and test those measures.</p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <div class="row spacer">	
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="large reveal"><a href="https://vsac.nlm.nih.gov/">Value Set Authoring Center (VSAC)</a></h2>
+  				<p class="reveal">The VSAC is a repository and authoring tool for public value sets. Value sets are lists of codes and corresponding terms, from standard clinical vocabularies (such as SNOMED-CT, RxNorm, LOINC and others), that define clinical concepts to support effective and interoperable health information exchange including quality measurement.</p>
+  			</div>
+  		</div>
+	  </div>
+	  <div id="vsac" class="side image reveal reveal_right">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/vsac.png">
+  			</div>
+  		</div>
+	  </div>
+	</div>
+
+  <div class="row spacer">
+  	<div id="qdm" class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+  			  <img src="img/components.png">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<p class="reveal">Bringing this all together, the data model (e.g., CDA, FHIR), the logic (e.g., CDM, CQL), and vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability and quality measurement. The adoption of these standards are critical to reducing cost and improving clinical outcomes.</p>
   			</div>
   		</div>
 	  </div>
@@ -274,13 +359,16 @@
 		<div class="main">
 			<div class="item-wrapper">
 				<div class="item">
-				<p class="reveal">We've done it! Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources:</p>
+				<p class="reveal">Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources:</p>
 				<ul class="reveal" style="text-align: left;">
+					<li><a href="https://hl7.org/FHIR/">FHIR Specification</a></li>
 					<li><a href="https://cql.hl7.org/">CQL Specification</a></li>
+					<li><a href="https://cql.hl7.org/10-c-referenceimplementations.html">CQL Reference Implementations (Tooling and Resources)</a></li>
 					<li><a href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples">Cooking with CQL Q&A</a></li>
 					<li><a href="https://github.com/cqframework/cqf-exercises">CQL Exercises</a></li>
 					<li><a href="https://build.fhir.org/index.html">FHIR Specification</a></li>
 					<li><a href="https://chat.fhir.org/login/">FHIR Community</a></li>
+					<li><a href="https://cqlab.io/">CQLab</a></li>
 				</ul>
 				<!--<img src="http://hl7.org/fhir/2016may/assets/images/fhir-logo-www.png"></img>-->
 				</div>

@@ -13,64 +13,94 @@
 
     <h1 class="header reveal center">The Fundamentals of Healthcare Interoperability</br>for Measure Developers</h1>
 
+    <div class="row spacer">
+    	<div class="main">
+    		<div class="item-wrapper">
+    			<div class="item center">
+    				<p class="reveal">In this article, we will try to demystify some of the concepts that measure developers may come across related to healthcare interoperability.</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
 
 <el-row>
   <el-col :span="4" :offset="20">
 	<el-affix>
 	  <el-tabs v-model="activeSection" :tab-position="'right'" class="demo-tabs">
+		<el-tab-pane name="background">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#background" :underline="false"><b>Background</b></el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
 		<el-tab-pane name="standards">      
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#standards" :underline="false">Standards</el-link>
+			  <el-link href="#standards" :underline="false">&nbsp;&nbsp;Standards</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
 		<el-tab-pane name="hl7">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#hl7" :underline="false">HL7</el-link>
+			  <el-link href="#hl7" :underline="false">&nbsp;&nbsp;HL7</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="data-models">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#data-models" :underline="false"><b>Data Models</b></el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
 		<el-tab-pane name="cda">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#cda" :underline="false">CDA</el-link>
+			  <el-link href="#cda" :underline="false">&nbsp;&nbsp;CDA</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
 		<el-tab-pane name="fhir">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#fhir" :underline="false">FHIR</el-link>
+			  <el-link href="#fhir" :underline="false">&nbsp;&nbsp;FHIR</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
-		<!--<el-tab-pane name="govt-mandates">
+		<el-tab-pane name="logic">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#govt-mandates" :underline="false">Government Mandates</el-link>
+			  <el-link href="#logic" :underline="false"><b>Logic</b></el-link>
 			</span>
 		  </template>
-		</el-tab-pane>-->
+		</el-tab-pane>
 		<el-tab-pane name="qdm">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#qdm" :underline="false">QDM</el-link>
+			  <el-link href="#qdm" :underline="false">&nbsp;&nbsp;QDM</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
 		<el-tab-pane name="cql">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#cql" :underline="false">CQL</el-link>
+			  <el-link href="#cql" :underline="false">&nbsp;&nbsp;CQL</el-link>
+			</span>
+		  </template>
+		</el-tab-pane>
+		<el-tab-pane name="vocab">
+		  <template #label>
+			<span class="custom-tabs-label">
+			  <el-link href="#vocab" :underline="false"><b>Vocabularies</b></el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
 		<el-tab-pane name="value-sets">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#value-sets" :underline="false">Value Sets</el-link>
+			  <el-link href="#value-sets" :underline="false">&nbsp;&nbsp;Value Sets</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
@@ -79,12 +109,13 @@
   </el-col>
 </el-row>
 
+	<h1 id="background" class="header reveal center">Background</h2>
+
   <div class="row spacer">
     <div class="main">
 		    <div class="item-wrapper">
     			<div class="item">
     				<p class="reveal">In the US, most healthcare providers have adopted an electronic healthcare record (EHR) or other software for capturing clinical information. This technology isn't a silver bullet though. Healthcare data can remain trapped within these systems. Even today, clinicians still fall back on old and inefficient ways of sharing clinical information from faxing chart notes to manually sharing paper-based documents. Without the seamless exchange of healthcare data, it can be difficult for clinicians caring for a patient to get the complete picture of the person's current health. This lack of coordination in the care of patients impacts the ability of clinicians to make appropriate clinical decisions and negatively impacts patient care. There are numerous examples where this lack of access to data has led to actual patient harm including death.</p>
-    				<p class="reveal">On this page, we will try to demystify some of the terms and acronyms that measure developers may come across in this space.</p>
     			</div>
 		    </div>
 	  </div>
@@ -135,46 +166,73 @@
     </div>
 
   <div class="row spacer">
-  	<div id="cda" class="side image reveal reveal_left">
+  	<div class="side image reveal reveal_left">
   		<div class="item-wrapper">
   			<div class="item card">
-  			  <img src="img/HL7-V2-V3-FHIR.png">
+  			  <img src="img/components.png">
   			</div>
   		</div>
 	  </div>
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal"><el-link href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Clinical Document Architecture (CDA)</el-link></h2>
-  				<p class="reveal">CDA is an interoperability standard that was released as part of HL7 V3 but had some challenges that limited implementation:</p>
-  				<ul class="reveal">
-					<li class="reveal">Steep learning curve</li>
-					<li class="reveal">Complexity limits true interoperability</li>
-					<li class="reveal">Does not fit well in many workflows</li>
-					<li class="reveal">Extensibility is difficult</li>
-				</ul>
+				<p class="reveal">The clinical data model (e.g., CDA, FHIR), the clinical logic (e.g., CDM, CQL), and clinical vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability. And, the adoption of these standards is critical for improving operational efficiency with quality measurement and reporting. With a healthcare system that is able to iterate and learn more quickly, we can make significant strides toward our goals of reducing healthcare costs and improving clinical outcomes.</p>
   			</div>
   		</div>
 	  </div>
 	</div>
+	
+	<h1 id="data-models" class="header reveal center">Clinical Data Models</h2>
 
-
-	<h1 class="header reveal center"><el-link href="https://hl7.org/FHIR/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Fast Healthcare Interoperability Resources (FHIR)</el-link></h2>
-    <div class="row spacer">
-	     <div class="item-wrapper" style="width: 500px; align-content: center;">
-		       <div class="item reveal">
-			          <img src="img/fhir.png" alt="">
+  <div class="row spacer">
+    <div class="main">
+		    <div class="item-wrapper">
+				<div class="item">
+					<h2 class="large reveal"><el-link href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=7" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Clinical Document Architecture (CDA)</el-link></h2>
+					<p class="reveal">CDA is an interoperability standard that was released as part of HL7 V3 but had some challenges that limited implementation:</p>
+					<ul class="reveal">
+						<li class="reveal">Steep learning curve</li>
+						<li class="reveal">Complexity limits true interoperability</li>
+						<li class="reveal">Does not fit well in many workflows</li>
+						<li class="reveal">Extensibility is difficult</li>
+					</ul>
+				</div>
+		    </div>
+	  </div>
+       <div id="hl7" class="side image reveal reveal_right">
+         <div class="item-wrapper">
+		       <div class="item">
+			       <img src="img/HL7-V2-V3-FHIR.png">
 		       </div>
+	       </div>
 	     </div>
     </div>
-	  
+
+  <div class="row spacer">
+  	<div class="side image reveal reveal_left">
+  		<div class="item-wrapper">
+  			<div class="item card">
+				<img src="img/fhir.png" alt="">
+  			</div>
+  		</div>
+	  </div>
+      <div class="main">
+  		<div class="item-wrapper">
+  			<div class="item">
+				<h2 class="reveal"><el-link href="https://hl7.org/FHIR/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Fast Healthcare Interoperability Resources (FHIR)</el-link></h2>
+  				<p class="reveal">FHIR (pronounced "fire") is an interoperability standard intended to facilitate the exchange of healthcare information between healthcare providers, patients, caregivers, payers, researchers, and anyone else involved in the healthcare ecosystem.</p>
+  			</div>
+  		</div>
+	  </div>
+	</div>
+	
   <div class="row spacer">
 
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-  				<p class="reveal">FHIR (pronounced "fire") is an interoperability standard intended to facilitate the exchange of healthcare information between healthcare providers, patients, caregivers, payers, researchers, and anyone else involved in the healthcare ecosystem.</p>
-  				<p class="reveal">The standard focuses on speed to learn and implement, lowering costs, scaling well from simple to complex, flexibility, and keeping the standard free to use. Moreoever, it leverages existing web technologies such as HTTP, REST, JSON, XML, and OAuth. These technologies should be familiar to most developers, reducing the learning curve compared with other standards.</p>
+  				<p class="reveal">FHIR focuses on speed to learn and implement, lowering costs, scaling well from simple to complex, flexibility, and keeping the standard free to use.</p>
+				<p>Moreoever, it leverages existing web technologies such as HTTP, REST, JSON, XML, and OAuth. These technologies should be familiar to most developers, reducing the learning curve compared with other standards.</p>
   			</div>
   		</div>
 	  </div>
@@ -266,6 +324,8 @@
 	  </div>
 	</div>
 
+<h1 id="logic" class="header reveal center">Clinical Logic</h2>
+
   <div class="row spacer">
   	<div id="qdm" class="side image reveal reveal_left">
   		<div class="item-wrapper">
@@ -284,18 +344,19 @@
 	  </div>
 	</div>
 
-  <h1 class="header reveal center"><el-link href="https://cql.hl7.org/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Clinical Quality Language (CQL)</el-link></h2>	
+  <h1 class="header reveal center"></h2>	
   <div class="row spacer">	
-      <div class="main">
+      <div class="main" style="max-width: 55%;">
   		<div class="item-wrapper">
   			<div class="item">
+				<h2 class="large reveal"><el-link href="https://cql.hl7.org/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Clinical Quality Language (CQL)</el-link></h2>
   				<p class="reveal">CQL is a language for representing clinical logic and meant to replace the Quality Data Model (QDM). And, it can be used for both electronic clinical quality measures (eCQMs) <i>and clinical decision support (CDS)</i>.</p>
 				<p class="reveal">The language is intended to be human readable but the specification also includes a machine-readable representation called Expression Logical Model (ELM) which should enable sharing between heallthcare organizations. In quality measurement, this creates efficiencies of scale by eliminating the need for each healthcare organizations to code quality measures for their system and ensures consistent implementation. However, there is a significant upfront costs to rebuild their systems or map their data to the FHIR (or CDA) standard.</p>
 
   			</div>
   		</div>
 	  </div>
-	  <div id="cql" class="side image reveal reveal_right">
+	  <div id="cql" class="side image reveal reveal_right" style="max-width: 40%;">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/cql.png">
@@ -315,13 +376,14 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<p class="reveal">Open-source tooling for the language is under development and being built in parallel with the specification. The Measure Authoring Tool (MAT), which can be used to author measures using CQL, and Bonnie, which can be used to test those measures, are open-source projects built on top of the core tooling.</p>
+				<p class="reveal">Open-source tooling for CQL is under development and being built in parallel with the specification. The Measure Authoring Tool (MAT), which can be used to author measures using CQL, and Bonnie, which can be used to test those measures, are open-source projects built on top of the core tooling.</p>
 				<p class="reveal"><el-link href="https://cqlab.io/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">CQLab</el-link> is another project built from the core tooling. It is a modern, single platform for measure developers to author digital quality measures using industry standards such FHIR and CQL, build value sets using commonly used clinical vocabularies (e.g., SNOMED, ICD-10, and RxNorm), and test those measures with synthetic FHIR resources.</p>
   			</div>
   		</div>
 	  </div>
 	</div>
 
+	<h1 id="vocab" class="header reveal center">Clinical Vocabularies</h2>
   <div class="row spacer">	
       <div class="main">
   		<div class="item-wrapper">
@@ -365,38 +427,18 @@
   		</div>
 	  </div>
 	</div>
-
-  <div class="row spacer">
-  	<div class="side image reveal reveal_left">
-  		<div class="item-wrapper">
-  			<div class="item card">
-  			  <img src="img/components.png">
-  			</div>
-  		</div>
-	  </div>
-      <div class="main">
-  		<div class="item-wrapper">
-  			<div class="item">
-				<p class="reveal">Bringing this all together, the data model (e.g., CDA, FHIR), the logic (e.g., CDM, CQL), and vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability. And, the adoption of these standards is critical for improving operational efficiency with quality measurement and reporting. With a healthcare system that is able to iterate and learn more quickly, we can make significant strides toward our goals of reducing healthcare costs and improving clinical outcomes.</p>
-  			</div>
-  		</div>
-	  </div>
-	</div>
 	
   	<div class="row spacer">
 		<div class="main">
 			<div class="item-wrapper">
 				<div class="item">
-				<p class="reveal">Congrats on sticking with me! If you are interesting in learning more about these topics, below are some great resources:</p>
+				<p class="reveal">Congrats on sticking with me! If you are interesting in learning more about these topics, below are some additional resources:</p>
 				<ul class="reveal" style="text-align: left;">
-					<li><el-link href="https://hl7.org/FHIR/" style="font-size: 1em; color: black;" :underline="false">FHIR Specification</el-link></li>
-					<li><el-link href="https://cql.hl7.org/" style="font-size: 1em; color: black;" :underline="false">CQL Specification</el-link></li>
 					<li><el-link href="https://cql.hl7.org/10-c-referenceimplementations.html" style="font-size: 1em; color: black;" :underline="false">CQL Reference Implementations (Tooling and Resources)</el-link></li>
 					<li><el-link href="https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Cooking-with-CQL-Examples" style="font-size: 1em; color: black;" :underline="false">Cooking with CQL Q&A</el-link></li>
 					<li><el-link href="https://github.com/cqframework/cqf-exercises" style="font-size: 1em; color: black;" :underline="false">CQL Exercises</el-link></li>
 					<li><el-link href="https://build.fhir.org/index.html" style="font-size: 1em; color: black;" :underline="false">FHIR Specification</el-link></li>
 					<li><el-link href="https://chat.fhir.org/login/" style="font-size: 1em; color: black;" :underline="false">FHIR Community</el-link></li>
-					<li><el-link href="https://cqlab.io/" style="font-size: 1em; color: black;" :underline="false">CQLab</el-link></li>
 				</ul>
 				<!--<img src="http://hl7.org/fhir/2016may/assets/images/fhir-logo-www.png"></img>-->
 				</div>

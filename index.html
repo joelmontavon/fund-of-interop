@@ -17,7 +17,7 @@
 <el-row>
   <el-col :span="4" :offset="20">
 	<el-affix>
-	  <el-tabs v-model="activeSection" @tab-click="handleClick" :tab-position="'right'" class="demo-tabs">
+	  <el-tabs v-model="activeSection" :tab-position="'right'" class="demo-tabs">
 		<el-tab-pane name="standards">      
 		  <template #label>
 			<span class="custom-tabs-label">
@@ -67,10 +67,10 @@
 			</span>
 		  </template>
 		</el-tab-pane>
-		<el-tab-pane name="vsac">
+		<el-tab-pane name="value-sets">
 		  <template #label>
 			<span class="custom-tabs-label">
-			  <el-link href="#vsac" :underline="false">VSAC</el-link>
+			  <el-link href="#value-sets" :underline="false">Value Sets</el-link>
 			</span>
 		  </template>
 		</el-tab-pane>
@@ -121,7 +121,7 @@
     			<div class="item">
     				<h2 class="large reveal"><el-link href="https://www.hl7.org/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Health Level Seven International (HL7)</el-link></h2>
     				<p class="reveal">HL7 is a non-profit organization dedicated to developing standards for the exchange of electronic healthcare data. The organization is supported by more than 1,600 members from over 50 countries, including 500+ corporate members representing healthcare providers, government stakeholders, payers, pharmaceutical companies, vendors/suppliers, and consulting firms.</p>
-					<p class="reveal">Over the years, HL7 has produced several standards to facilitate the exchange of healthcare information, including Clinical Document Architecture (CDA), and the Fast Healthcare Interoperability Resources (FHIR) standard.</p>
+					<p class="reveal">Over the years, HL7 has produced several standards to facilitate the exchange of healthcare information, including Clinical Document Architecture (CDA) and the Fast Healthcare Interoperability Resources (FHIR) standard.</p>
     			</div>
 		    </div>
 	  </div>
@@ -183,8 +183,8 @@
   			<div class="item card">
   				<table class="el-table">
 					<tr class="el-table__row">
-						<th class="el-table__cell">Technology</th>
-						<th class="el-table__cell">Description</th>
+						<th class="el-table__cell" style="background-color: #E6E8EB;">Technology</th>
+						<th class="el-table__cell" style="background-color: #E6E8EB;">Description</th>
 					</tr>
 					<tr class="el-table__row">
 						<td class="el-table__cell">Hyper Text Transfer Protocol (HTTP)</td>
@@ -233,7 +233,7 @@
   			<div class="item">
 				<p class="reveal">FHIR includes a data model in the form of <el-link href="https://www.hl7.org/fhir/resourcelist.html" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">resources</el-link> and a specification for the exchange of these resources via a RESTful API as well as messaging and documents.</p>
 				<ul class="reveal">
-					<li class="reveal">Resources span many concepts including the individual (e.g., Patient), workflow (e.g., Appointment), patient management (e.g., Encounter), clinical treatment (e.g., Condition, Observation, MediationRequest, CarePlan, Communication), and financial transactions (e.g., Coverage, Claim).</li>
+					<li class="reveal">Resources span many concepts including workflow, clinical treatment, financials, and even quality measures.</li>
 					<li class="reveal">Messages are used to communicate multiple resources in a single exchange.</li>
 					<li class="reveal">Documents focus on persistence when data touches multiple resources.</li>
 				</ul>
@@ -244,7 +244,7 @@
 	</div>
 	
   <div class="row spacer">	
-      <div class="main">
+      <div class="main" style="max-width: 60%;">
   		<div class="item-wrapper">
   			<div class="item">
   				<p class="reveal">In 2020, the U.S. Centers for Medicare & Medicaid Services (CMS) finalized a mandate for the use of FHIR by a variety of CMS-regulated payers and providers beginning in mid-2021. These rules have far reaching implications for healthcare providers, payers, and health IT vendors.</p>
@@ -257,7 +257,7 @@
   			</div>
   		</div>
 	  </div>
-	  <div class="side image reveal reveal_right">
+	  <div class="side image reveal reveal_right" style="max-width: 35%;">
   		<div class="item-wrapper">
   			<div class="item card">
   			  <img src="img/cures-act.png">
@@ -289,7 +289,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-  				<p class="reveal">CQL is a language for representing clinical logic and meant to replace the Quality Data Model (QDM). And, it can be used for both electronic clinical quality measures (eCQMs) and clinical decision support (CDS).</p>
+  				<p class="reveal">CQL is a language for representing clinical logic and meant to replace the Quality Data Model (QDM). And, it can be used for both electronic clinical quality measures (eCQMs) <i>and clinical decision support (CDS)</i>.</p>
 				<p class="reveal">The language is intended to be human readable but the specification also includes a machine-readable representation called Expression Logical Model (ELM) which should enable sharing between heallthcare organizations. In quality measurement, this creates efficiencies of scale by eliminating the need for each healthcare organizations to code quality measures for their system and ensures consistent implementation. However, there is a significant upfront costs to rebuild their systems or map their data to the FHIR (or CDA) standard.</p>
 
   			</div>
@@ -316,7 +316,7 @@
   		<div class="item-wrapper">
   			<div class="item">
 				<p class="reveal">Open-source tooling for the language is under development and being built in parallel with the specification. The Measure Authoring Tool (MAT), which can be used to author measures using CQL, and Bonnie, which can be used to test those measures, are open-source projects built on top of the core tooling.</p>
-				<p class="reveal"><el-link href="https://cqlab.io/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">CQLab</el-link> is another project built from the core tooling. It is a modern, single platform for measure developers to author digital quality measures using industry standards such FHIR and CQL, build value sets using medical coding terminologies (e.g., SNOMED, ICD-1O, and RxNorm), and test those measures.</p>
+				<p class="reveal"><el-link href="https://cqlab.io/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">CQLab</el-link> is another project built from the core tooling. It is a modern, single platform for measure developers to author digital quality measures using industry standards such FHIR and CQL, build value sets using commonly used clinical vocabularies (e.g., SNOMED, ICD-10, and RxNorm), and test those measures with synthetic FHIR resources.</p>
   			</div>
   		</div>
 	  </div>
@@ -326,15 +326,41 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<h2 class="large reveal"><el-link href="https://vsac.nlm.nih.gov/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Value Set Authoring Center (VSAC)</el-link></h2>
-  				<p class="reveal">The VSAC is a repository and authoring tool for public value sets. Value sets are lists of codes and corresponding terms, from standard clinical vocabularies (such as SNOMED-CT, RxNorm, LOINC and others), that define clinical concepts to support effective and interoperable health information exchange including quality measurement.</p>
+				<h2 class="large reveal">Value Sets</h2>
+  				<p class="reveal">Value sets are lists of codes and corresponding terms, from standard clinical vocabularies, that define clinical concepts to support effective and interoperable health information exchange including quality measurement. Some of these standards clinical vocabularies are listed in the table to the right.</p>
+  				<p class="reveal">The <el-link href="https://vsac.nlm.nih.gov/" style="font-size: 1em; font-weight: bold; color: black;" :underline="false">Value Set Authoring Center (VSAC)</el-link> is a repository and authoring tool for public value sets.</p>
   			</div>
   		</div>
 	  </div>
-	  <div id="vsac" class="side image reveal reveal_right">
+	  <div id="value-sets" class="side image reveal reveal_right">
   		<div class="item-wrapper">
   			<div class="item card">
-  			  <img src="img/vsac.png">
+  				<table class="el-table" :fit="true" style="width: 500px;">
+					<tr class="el-table__header el-table__row">
+						<th class="el-table__cell" style="background-color: #E6E8EB;">Vocabulary</th>
+						<th class="el-table__cell" style="background-color: #E6E8EB;">Scope</th>
+					</tr>
+					<tr class="el-table__row">
+						<td class="el-table__cell">SNOMED-CT</td>
+						<td class="el-table__cell">Comprehensive</td>					
+					</tr>
+					<tr class="el-table__row el-table__row--striped">
+						<td class="el-table__cell">ICD-10-DM</td>
+						<td class="el-table__cell">Diagnostics</td>					
+					</tr>
+					<tr class="el-table__row">
+						<td class="el-table__cell">ICD-10-PCS</td>
+						<td class="el-table__cell">Procedures</td>					
+					</tr>
+					<tr class="el-table__row el-table__row--striped">
+						<td class="el-table__cell">LOINC</td>
+						<td class="el-table__cell">Labs</td>					
+					</tr>
+					<tr class="el-table__row">
+						<td class="el-table__cell">RxNorm</td>
+						<td class="el-table__cell">Medications</td>					
+					</tr>
+				</table>
   			</div>
   		</div>
 	  </div>
@@ -351,7 +377,7 @@
       <div class="main">
   		<div class="item-wrapper">
   			<div class="item">
-				<p class="reveal">Bringing this all together, the data model (e.g., CDA, FHIR), the logic (e.g., CDM, CQL), and vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability and quality measurement. The adoption of these standards are critical to reducing healthcare costs and improving clinical outcomes.</p>
+				<p class="reveal">Bringing this all together, the data model (e.g., CDA, FHIR), the logic (e.g., CDM, CQL), and vocabularies (e.g., SNOMED-CT, LOINC, RxNorm) are all essential building blocks for interoperability. And, the adoption of these standards is critical for improving operational efficiency with quality measurement and reporting. With a healthcare system that is able to iterate and learn more quickly, we can make significant strides toward our goals of reducing healthcare costs and improving clinical outcomes.</p>
   			</div>
   		</div>
 	  </div>

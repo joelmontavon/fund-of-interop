@@ -122,3 +122,7 @@ code > .madlib {
   visibility: hidden;
   will-change: transform, opacity;
 }
+
+tr:hover {
+  background-color: #E6E8EB;
+}

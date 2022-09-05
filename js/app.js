@@ -6,37 +6,6 @@ var app = Vue.createApp({
 	},
 	mounted() {
 		var self = this;
-		
-		function rotateImages(elem, selector) {
-		  selector = selector || 'img';
-		  const regex = new RegExp('[0-9]+:[0-9]+:[a-zA-Z]+$');
-		  var img = elem.querySelector(selector);
-
-		  if (img) {
-			if (img && regex.test(img.alt)) {
-			  var n = img.alt.search(regex);
-			  var filename = img.alt.slice(0, n);
-			  var start, end, ext;
-			  [start, end, ext] = img.alt.slice(n, 9999).split(':');
-
-			  var tweens = [];
-			  for (var i = Number(start); i <= Number(end); i++) {
-				tweens.push({method: 'set', props: {attr: {src: filename + String(i) + '.' + ext}}});
-				tweens.push({method: 'to', props: {autoAlpha:1, duration: 0.75}});
-				tweens.push({method: 'to', props: {autoAlpha:0, duration: 0.75, delay: 1.5}});
-			  }
-
-			  var tl = gsap.timeline({repeat: -1});
-			  tweens.forEach(function (item) {
-				tl[item.method](img, item.props);
-			  });
-
-			  gsap.set(img, {attr: {src: filename + String(i) + '.' + ext}});
-			  gsap.to(img, {autoAlpha:1, duration: 0.75});
-			}
-			img.alt = ''
-		  }
-		}
 
 		function animateFrom(elem, direction) {
 		  direction = direction || 1;
@@ -63,7 +32,6 @@ var app = Vue.createApp({
 		  if (elem.id) { 
 			self.activeSection = elem.id;
 		  }
-		  rotateImages(elem);
 		}
 
 		function hide(elem) {
@@ -74,23 +42,24 @@ var app = Vue.createApp({
 		  gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 		  gsap.utils.toArray(".reveal").forEach(function(elem) {
-			hide(elem); // assure that the element is hidden when scrolled into view
+			if (animate) {
+				hide(elem);
 
-			ScrollTrigger.create({
-			  trigger: elem,
-			  onEnter: function() { animateFrom(elem) },
-			  onEnterBack: function() { animateFrom(elem, -1) },
-			  onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
-			});
+				ScrollTrigger.create({
+				  trigger: elem,
+				  onEnter: function() { animateFrom(elem) },
+				  onEnterBack: function() { animateFrom(elem, -1) },
+				  onLeave: function() { hide(elem) }
+				});
+			} else {
+				elem.style.opacity = "100";
+				elem.style.visibility = "visible";
+			}
 		  });
-
-		  rotateImages(document, '#definitions');
 		});
 
 		window.addEventListener('load', function() {
 			let message = { height: document.body.scrollHeight, width: document.body.scrollWidth };
-
-			// window.top refers to parent window
 			window.top.postMessage(message, "*");
 		})	
 	}
